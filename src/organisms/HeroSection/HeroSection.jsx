@@ -21,9 +21,13 @@ const HeroSection = () => {
         Frontend software engineer and interface designer
       </p>
       <div className="flex gap-4 items-center justify-center pt-2">
-        <button className="p-4 bg-emerald-50 rounded text-slate-950 font-black">
+        <a
+          href="mailto:riveramoranicolas@gmail.com"
+          className="p-4 bg-emerald-50 rounded text-slate-950 font-black"
+        >
           Contactame
-        </button>
+        </a>
+
         <a
           href="https://resume.io/r/0my4lDyLi"
           target="_blank"
