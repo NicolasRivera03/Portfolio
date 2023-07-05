@@ -15,7 +15,7 @@ const HeroSection = () => {
       </div>
       <h1 className=" text-center font-extrabold relative max-[700px]:text-7xl inline-block tracking-tighter text-transparent text-8xl bg-clip-text bg-gradient-to-b dark:from-[#7ef29d] dark:to-[#0f68a9] from-[#7ef29d] to-[#0f68a9]">
         <span>Hi!</span>
-        <span>, I'm Nico</span>
+        <span>, Im Nico</span>
       </h1>
       <p className="text-center dark:text-[#cecece] text-neutral-700 tracking-tight font-semibold text-2xl">
         Frontend software engineer and interface designer
