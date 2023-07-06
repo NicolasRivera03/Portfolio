@@ -3,7 +3,7 @@ import { BiLogoReact } from "react-icons/bi";
 
 const SelectedWork = () => {
   return (
-    <div className="flex flex-col justify-center w-full h-auto px-10 max-w-screen-xl m-auto">
+    <div className="flex flex-col justify-center w-full h-auto px-4 md:px-10 max-w-screen-xl m-auto">
       <p className="text-center">What i have done so far</p>
       <h2 className="text-center font-bold text-[#1f1c19] dark:text-[#cdbead] relative item-s text-transparent text-6xl bg-clip-text inline-block text-gradient tracking-tighter">
         Employment History
