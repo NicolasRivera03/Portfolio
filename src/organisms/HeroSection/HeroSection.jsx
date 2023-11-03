@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="sm:px-2 py-2 h-screen w-full md:h-screen w-full md:px-40 md:py-10 grid place-content-center gap-2 relative">
+    <div className="sm:px-2 py-2 h-screen w-full md:h-screen md:px-40 md:py-10 grid place-content-center gap-2 relative">
       <div className="grid place-content-center -mb-16">
         <Image
           src="/Memongi.png"
