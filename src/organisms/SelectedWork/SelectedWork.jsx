@@ -3,153 +3,176 @@
 import React from "react";
 import { BiLogoReact } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const SelectedWork = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="w-full bg-slate-950">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="flex flex-col justify-center w-full h-auto px-4 md:px-10 max-w-screen-xl m-auto bg-slate-900"
+    <div className="w-full h-auto bg-slate-950 flex flex-col gap-32">
+      <div
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+        className="flex flex-col justify-center w-full h-auto px-4 md:px-10 max-w-screen-xl m-auto "
       >
-        <p className="text-center">What i have done so far</p>
-        <h2 className="text-center font-bold text-[#cdbead] relative item-s text-transparent text-6xl bg-clip-text inline-block text-gradient tracking-tighter">
-          Employment History
+        <p className="text-center text-white">Mis</p>
+        <h2 className="text-center font-bold text-white relative item-s text-transparent text-6xl bg-clip-text inline-block text-gradient tracking-tighter">
+          Proyectos
         </h2>
-        <div className="grid  bg-slate-100 dark:bg-gray-900 mt-5 rounded p-4">
-          <div className="flex flex-col gap-4">
-            <div className="bg-white dark:bg-slate-800 rounded p-4">
-              <h3 className="text-[#cdbead] text-2xl font-bold tracking-tighter">
-                Frontend Developer at Farmalógica, Bogotá
-              </h3>
-              <p>
-                Experience developing an application what integrates SAP BO,
-                with React API Fetch Tailwind and SQL Server.
-              </p>
-              <p className="dark:text-[#cdbead] text-[#1f1c19] text-1xl font-thin tracking-tighter">
-                March 2023 - Present
-                <span></span>
-              </p>
-              <ul className="pt-2 list-disc pl-4">
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Analyze and optimize sells and invoices processes
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Create APIs with Node JS
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design Optimized process with Figma
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design Low fidelity designs{" "}
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design High fidelity designs
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design SQL model from Database.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Documentation code.
-                </li>
-              </ul>
+      </div>
 
-              <p className="dark:text-[#cdbead] text-[#1f1c19] mt-2">
-                Tech Stack
-              </p>
-              <div>
-                <div className="flex bg-emerald-400 rounded-full w-fit justify-center py-1 px-2 items-center">
-                  React
-                  <BiLogoReact />
-                </div>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-slate-800 rounded p-4">
-              <h3 className="dark:text-[#cdbead] text-[#1f1c19] text-2xl font-bold tracking-tighter">
-                Ui Developer at Nivelics, Bogotá
-              </h3>
-              <p>
-                Acquired experience, developing stylized components with Styled
-                Components, and good quality standards such as Pixel Perfect
-                have allowed me to successfully finish two large projects with
-                television chains in Mexico and Colombia.
-              </p>
-              <p className="dark:text-[#cdbead] text-[#1f1c19] text-1xl font-thin tracking-tighter">
-                March 2023 - Present
-                <span></span>
-              </p>
-              <ul className="pt-2 list-disc pl-4">
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Analyze and estimate development times based on the proposed
-                  designs
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Web prototype design according to the wireframes proposed by
-                  the client
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Develop approved designs -based model.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Constant communication with the client giving daily task
-                  status.
-                </li>
-              </ul>
-
-              <p className="dark:text-[#cdbead] text-[#1f1c19] mt-2">
-                Tech Stack
-              </p>
-              <div>
-                <div className="flex bg-emerald-400 rounded-full w-fit justify-center py-1 px-2 items-center">
-                  React
-                  <BiLogoReact />
-                </div>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-slate-800 rounded p-4">
-              <h3 className="dark:text-[#cdbead] text-[#1f1c19] text-2xl font-bold tracking-tighter">
-                Web Developer at Business Process Management Latinoamerica,
-                Bogotá
-              </h3>
-              <p>
-                Experience developing the bpm-lat.com website from the creative
-                stage to the internal development of the site.
-              </p>
-              <p className="dark:text-[#cdbead] text-[#1f1c19] text-1xl font-thin tracking-tighter">
-                March 2023 - Present
-                <span></span>
-              </p>
-              <ul className="pt-2 list-disc pl-4">
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design and develop the internal website.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Design BPM forms for public entities.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Develop BPMN processes for public entities.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  Code and infrastructure maintenance.
-                </li>
-                <li className="dark:text-[#cdbead] text-[#1f1c19]">
-                  ETLs development and API rest services.
-                </li>
-              </ul>
-
-              <p className="dark:text-[#cdbead] text-[#1f1c19] mt-2">
-                Tech Stack
-              </p>
-              <div>
-                <div className="flex bg-emerald-400 rounded-full w-fit justify-center py-1 px-2 items-center">
-                  React
-                  <BiLogoReact />
-                </div>
-              </div>
-            </div>
+      <div className="grid gap-4 md:grid-cols-2 p-10 px-24 items-center place-content-center">
+        <div className="text-white flex flex-col gap-2">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            className="text-5xl font-semibold items-center "
+          >
+            N+ Televisa
+          </h2>
+          <p
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            Contribuí al desarrollo de la Fase 1 de nmas Televisa, donde fui
+            responsable de diseñar la arquitectura inicial de los componentes y
+            desarrollar la interfaz de usuario (UI) en conjunto del equipo de
+            desarrollo.
+          </p>
+          <div
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <span>React</span>
+            <span>Styled-Components</span>
           </div>
         </div>
-      </motion.div>
+        <div
+          style={{
+            transform: isInView ? "none" : "translateX(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <img
+            src="https://images.pexels.com/photos/18824575/pexels-photo-18824575/free-photo-of-resfriado-nieve-madera-amanecer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Imagen de referencia"
+          />
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 p-10 px-24 items-center place-content-center">
+        <div className="text-white flex flex-col gap-2">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            className="text-5xl font-semibold items-center "
+          >
+            N+ Televisa
+          </h2>
+          <p
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            Contribuí al desarrollo de la Fase 1 de nmas Televisa, donde fui
+            responsable de diseñar la arquitectura inicial de los componentes y
+            desarrollar la interfaz de usuario (UI) en conjunto del equipo de
+            desarrollo.
+          </p>
+          <div
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <span>React</span>
+            <span>Styled-Components</span>
+          </div>
+        </div>
+        <div
+          style={{
+            transform: isInView ? "none" : "translateX(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <img
+            src="https://images.pexels.com/photos/18824575/pexels-photo-18824575/free-photo-of-resfriado-nieve-madera-amanecer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Imagen de referencia"
+          />
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 p-10 px-24 items-center place-content-center">
+        <div className="text-white flex flex-col gap-2">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            className="text-5xl font-semibold items-center "
+          >
+            N+ Televisa
+          </h2>
+          <p
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            Contribuí al desarrollo de la Fase 1 de nmas Televisa, donde fui
+            responsable de diseñar la arquitectura inicial de los componentes y
+            desarrollar la interfaz de usuario (UI) en conjunto del equipo de
+            desarrollo.
+          </p>
+          <div
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <span>React</span>
+            <span>Styled-Components</span>
+          </div>
+        </div>
+        <div
+          style={{
+            transform: isInView ? "none" : "translateX(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <img
+            src="https://images.pexels.com/photos/18824575/pexels-photo-18824575/free-photo-of-resfriado-nieve-madera-amanecer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Imagen de referencia"
+          />
+        </div>
+      </div>
     </div>
   );
 };

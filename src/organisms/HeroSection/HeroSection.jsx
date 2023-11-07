@@ -4,12 +4,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { useFollowPointer } from "./use-follow-pointer";
 
 const HeroSection = () => {
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <>
@@ -19,28 +21,63 @@ const HeroSection = () => {
         exit={{ opacity: 0 }}
         className="box sm:px-2 py-2 h-screen w-full md:h-screen md:px-40 md:py-10 grid place-content-center gap-2 relative bg-slate-950"
       >
-        <div className="grid place-content-center -mb-16">
+        <motion.div
+          className="grid place-content-center -mb-16"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 100,
+              restDelta: 0.001,
+            },
+          }}
+        >
           <Image
             src="/Memongi.png"
             width={230}
             height={230}
             alt="Memongi Nicolás Rivera Mora"
           />
-        </div>
-        <h1 className="text-center font-extrabold relative max-[700px]:text-7xl inline-block tracking-tighter text-transparent text-8xl bg-clip-text bg-gradient-to-b dark:from-[#7ef29d] dark:to-[#0f68a9] from-[#7ef29d] to-[#0f68a9]">
+        </motion.div>
+        <h1
+          style={{
+            transform: isInView ? "none" : "translateY(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          className="text-center font-extrabold relative max-[700px]:text-7xl inline-block tracking-tighter text-transparent text-8xl bg-clip-text bg-gradient-to-b dark:from-[#7ef29d] dark:to-[#0f68a9] from-[#7ef29d] to-[#0f68a9]"
+        >
           <span>Hola!</span>
           <span>, soy Nico</span>
         </h1>
-        <p className="text-center bg-gray-900s  text-slate-50 tracking-tight font-medium text-2xl">
+        <p
+          style={{
+            transform: isInView ? "none" : "translateY(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          className="text-center bg-gray-900s  text-slate-50 tracking-tight font-medium text-2xl"
+        >
           Desarrollador Frontend y Diseñador Web
         </p>
-        <div className="flex gap-4 items-center justify-center pt-2">
+        <div
+          style={{
+            transform: isInView ? "none" : "translateY(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          className="flex gap-4 items-center justify-center pt-2"
+        >
           <motion.a
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
             href="mailto:riveramoranicolas@gmail.com"
-            className="p-4 z-10 bg-slate-900 text-white rounded-full  font-semibold"
+            className="p-4 z-10 bg-white text-slate-950 rounded-full  font-semibold"
           >
             Contactame
           </motion.a>
@@ -54,7 +91,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
           >
             <button className="z-10 p-4 outline outline-white text-white outline-2 rounded-full font-semibold">
-              Mi CV
+              Mis proyectos
             </button>
           </motion.a>
         </div>
@@ -67,8 +104,8 @@ const HeroSection = () => {
         animate={{ x, y }}
         transition={{
           type: "spring",
-          damping: 2,
-          stiffness: 30,
+          damping: 10,
+          stiffness: 150,
           restDelta: 0.001,
         }}
       />
