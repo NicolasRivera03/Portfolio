@@ -11,7 +11,7 @@ const SelectedWork = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="w-full h-auto bg-slate-950 flex flex-col gap-32">
+    <div className=" bg-slate-950 flex flex-col gap-32">
       <div
         ref={ref}
         style={{

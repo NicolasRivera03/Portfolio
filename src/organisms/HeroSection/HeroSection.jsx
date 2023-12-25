@@ -19,7 +19,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="box sm:px-2 py-2 h-screen w-full md:h-screen md:px-40 md:py-10 grid place-content-center gap-2 relative bg-slate-950"
+        className="box p-4 md:px-40 md:py-10 grid place-content-center gap-2 relative bg-slate-950"
       >
         <motion.div
           className="grid place-content-center -mb-16"
@@ -49,9 +49,9 @@ const HeroSection = () => {
             opacity: isInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
-          className="text-center font-extrabold relative max-[700px]:text-7xl inline-block tracking-tighter text-transparent text-8xl bg-clip-text bg-gradient-to-b dark:from-[#7ef29d] dark:to-[#0f68a9] from-[#7ef29d] to-[#0f68a9]"
+          className="text-6xl text-center font-extrabold relative max-[700px]:text-6xl inline-block tracking-tighter text-transparent  bg-clip-text bg-gradient-to-b dark:from-[#7ef29d] dark:to-[#0f68a9] from-[#7ef29d] to-[#0f68a9]"
         >
-          <span>Hola!</span>
+          <span>¡Hola!</span>
           <span>, soy Nico</span>
         </h1>
         <p
@@ -60,7 +60,7 @@ const HeroSection = () => {
             opacity: isInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
-          className="text-center bg-gray-900s  text-slate-50 tracking-tight font-medium text-2xl"
+          className="text-center bg-gray-900s  text-slate-50 tracking-tight font-bold text-2xl"
         >
           Desarrollador Frontend y Diseñador Web
         </p>
@@ -100,7 +100,7 @@ const HeroSection = () => {
       </motion.div>
       <motion.div
         ref={ref}
-        className="fixed bg-transparent z-0 outline-dashed outline-white w-24 h-24 rounded-full "
+        className="hidden md:flex fixed bg-transparent z-0 outline-dashed outline-white w-24 h-24 rounded-full "
         animate={{ x, y }}
         transition={{
           type: "spring",

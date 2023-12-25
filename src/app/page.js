@@ -1,11 +1,10 @@
-import HeroSection from "@/organisms/HeroSection/HeroSection";
-import SelectedWork from "@/organisms/SelectedWork/SelectedWork";
+import { HomePage } from "@/templates/home/home";
+
 
 export default function Home() {
   return (
     <main className="">
-      <HeroSection />
-      <SelectedWork />
+     <HomePage/>
     </main>
   );
 }
